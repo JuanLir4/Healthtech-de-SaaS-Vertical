@@ -25,7 +25,6 @@ CREATE TABLE stg_operadoras (
 );
 
 
-
 CREATE TABLE stg_despesas_consolidadas (
     ano TEXT,
     trimestre TEXT,
@@ -46,21 +45,21 @@ CREATE TABLE stg_despesas_agregadas (
 
 
 COPY stg_operadoras
-FROM 'data/arquivosDescomp/Relatorio_cadop.csv'
+FROM 'C:/Users/Juan/Desktop/TesteTecnicoIntuitive/data/arquivosDescomp/Relatorio_cadop.csv'
 DELIMITER ';'
 CSV HEADER
 ENCODING 'UTF8';
 
 
 COPY stg_despesas_consolidadas
-FROM 'data/arquivosDescomp/despesas_agregadas.csv'
+FROM 'C:/Users/Juan/Desktop/TesteTecnicoIntuitive/data/arquivosDescomp/resultado_final.csv'
 DELIMITER ';'
 CSV HEADER
 ENCODING 'UTF8';
 
 
 COPY stg_despesas_agregadas
-FROM 'data/arquivosDescomp/resultado_final.csv'
+FROM 'C:/Users/Juan/Desktop/TesteTecnicoIntuitive/data/arquivosDescomp/despesas_agregadas.csv'
 DELIMITER ';'
 CSV HEADER
 ENCODING 'UTF8';
