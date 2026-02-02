@@ -1,0 +1,8 @@
+[
+  {"Nome": "Juan", "Idade": 22, "Cidade": "Recife"},
+  {"Nome": "Maria", "Idade": 30, "Cidade": "São Paulo"},
+  {"Nome": "José", "Idade": 28, "Cidade": "Fortaleza"},
+  {"Nome": "Ana", "Idade": 25, "Cidade": "Recife"},
+  {"Nome": "Carlos", "Idade": 35, "Cidade": "Natal"},
+  {"Nome": "Beatriz", "Idade": 27, "Cidade": "Salvador"}
+]
