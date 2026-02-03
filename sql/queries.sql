@@ -1,8 +1,8 @@
--- =====================================================
+
 -- QUERY 1
 -- 5 operadoras com maior crescimento percentual
 -- entre o primeiro e o último trimestre analisado
--- =====================================================
+
 
 WITH despesas_trimestre AS (
     SELECT
@@ -39,11 +39,11 @@ LIMIT 5;
 
 
 
--- =====================================================
+
 -- QUERY 2
 -- Distribuição de despesas por UF
 -- + média de despesas por operadora
--- =====================================================
+
 
 SELECT
     o.uf,
@@ -57,11 +57,9 @@ LIMIT 5;
 
 
 
--- =====================================================
 -- QUERY 3
 -- Operadoras acima da média geral
 -- em pelo menos 2 dos 3 trimestres
--- =====================================================
 
 WITH media_geral AS (
     SELECT AVG(valor_despesa) AS media

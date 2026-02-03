@@ -1,0 +1,47 @@
+{
+  "info": {
+    "_postman_id": "c788376a-5003-46bc-a918-c1c31f24fde9",
+    "name": "testeTec",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "52059770",
+    "_collection_link": "https://go.postman.co/collection/52059770-c788376a-5003-46bc-a918-c1c31f24fde9?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "lista-operadoras",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "description": "Gera a lista de operadoras com Keyset Pagination"
+      },
+      "response": []
+    },
+    {
+      "name": "operadoras-cnpj",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "description": "Retorna uma operadora pelo cnpj"
+      },
+      "response": []
+    },
+    {
+      "name": "estatisticas",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "description": "Retorna algumas estatisticas"
+      },
+      "response": []
+    },
+    {
+      "name": "cnpj-despesas",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "description": "Retorna as despesas de um mesmo cnpj"
+      },
+      "response": []
+    }
+  ]
+}

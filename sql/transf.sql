@@ -1,20 +1,16 @@
--- =====================================================
--- TRANSFORMAÇÃO: STAGING → MODELO FINAL
--- =====================================================
 
--- (opcional, mas recomendado para reexecução)
--- Limpa dados anteriores mantendo estrutura
+-- TRANSFORMAÇÃO: STAGING → MODELO FINAL
+
 TRUNCATE TABLE despesas_agregadas;
 TRUNCATE TABLE despesas_consolidadas;
 TRUNCATE TABLE operadoras CASCADE;
 
 
--- =====================================================
 -- 1. OPERADORAS
 -- - Limpeza de CNPJ e CEP
 -- - Padronização de UF
 -- - Tratamento de múltiplos formatos de data
--- =====================================================
+
 
 INSERT INTO operadoras (
     registro_operadora,
@@ -71,12 +67,12 @@ WHERE
     AND razao_social IS NOT NULL;
 
 
--- =====================================================
+
 -- 2. DESPESAS CONSOLIDADAS
 -- - Conversão de tipos
 -- - Validação de valor monetário
 -- - Associação via registro ANS
--- =====================================================
+
 
 INSERT INTO despesas_consolidadas (
     operadora_id,
@@ -100,11 +96,11 @@ WHERE
     s.valor_despesa ~ '^[0-9,\.]+$';
 
 
--- =====================================================
+
 -- 3. DESPESAS AGREGADAS
 -- - Associação por razão social
 -- - Padronização de UF
--- =====================================================
+
 
 INSERT INTO despesas_agregadas (
     operadora_id,
