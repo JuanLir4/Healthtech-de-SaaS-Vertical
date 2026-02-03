@@ -13,6 +13,13 @@ class OperadoraDespesasResponse(BaseModel):
     cnpj: str
     despesas: List[Despesa]
     
+class DespesaSimples(BaseModel):
+    valor: float
+       
+class OperadoraDespesasRaz(BaseModel):
+    razao_social: str
+    despesas: List[DespesaSimples]
+    
 class OperadoraDespesasResponseUF(BaseModel):
     uf: str
     despesas: float

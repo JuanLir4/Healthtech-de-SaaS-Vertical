@@ -91,5 +91,17 @@ def listarOperadoras(cursor: int | None = None, limit: int = 5):
 
     return {"items": items, "next_cursor": next_cursor}
     
-
+def buscarDespesasRaz(razao_social: str):
+    despesas = []
+    #agora vou procurar atraves do registro q salvei vou procurar no outro csv:
+    with open(Path(despesasAgregadas), newline="", encoding="utf-8") as csvfile:
+        reader2 = csv.DictReader(csvfile, delimiter=";")
+    
+        for row in reader2:
+            if row["Razao_Social"] == razao_social:
+            
+                despesas.append({
+                    "valor": float(row["ValorDespesa"])
+        })
+    return despesas
     

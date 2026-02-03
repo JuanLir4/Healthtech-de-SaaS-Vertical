@@ -1,7 +1,7 @@
 from fastapi import APIRouter, HTTPException, Query
-from app.services.operadorasService import buscarCNPJ, listarOperadoras, buscarDespesas, buscarDespesasUF
+from app.services.operadorasService import buscarCNPJ, listarOperadoras, buscarDespesas, buscarDespesasUF, buscarDespesasRaz
 from app.models.operadores import Operadora, ListaOperadora
-from app.models.operadoresDespesas import OperadoraDespesasResponse, OperadoraDespesasResponseUF
+from app.models.operadoresDespesas import OperadoraDespesasResponse, OperadoraDespesasResponseUF, OperadoraDespesasRaz
 
 
 router = APIRouter(
@@ -64,6 +64,18 @@ def getOperadoraDespesaUF(UF: str):
             "despesas": despesas
             }
  
-       
+@router.get("/{razao_social}/despesas", response_model=OperadoraDespesasRaz)     
+def getOperadoraDespesa(razao_social: str):
+    despesas = buscarDespesasRaz(razao_social)
+    
         
-
+    if not despesas:
+        raise HTTPException(
+            status_code=404,
+            detail="Nenhuma despesa encontrada para esta RazaoSocial"
+        )
+    
+    return {
+            "razao_social": razao_social,
+            "despesas": despesas
+            }
